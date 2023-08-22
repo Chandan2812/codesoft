@@ -89,5 +89,26 @@ bookingRouter.put('/:bookingId/cancel', async (req, res) => {
 });
 
 
+bookingRouter.put('/:bookingId/update-payment', async (req, res) => {
+    const { bookingId } = req.params;
+    const { paymentStatus } = req.body; 
+
+    try {
+        const booking = await BookingModel.findById(bookingId);
+        if (!booking) {
+            return res.status(404).json({ message: 'Booking not found' });
+        }
+
+        booking.paymentStatus = paymentStatus;
+        await booking.save();
+
+        res.status(200).json({ message: 'Payment status updated successfully',booking:booking });
+
+    } catch (error) {
+        res.status(500).json({ message: 'An error occurred', error: error.message });
+    }
+});
+
+
 
 module.exports={bookingRouter}
