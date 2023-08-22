@@ -66,6 +66,24 @@ function appendData(data){
         let bookingDate=document.createElement("h4")
         bookingDate.textContent=`Booking Date : ${element.bookingDate.split("T")[0]}`
 
+        let payment=document.createElement('h3')
+        payment.textContent=`Payment:`
+        let status=document.createElement('span')
+        status.textContent=element.paymentStatus
+        payment.append(status)
+        if(status.textContent=='Pending')
+        status.style.color="orange"
+        if(status.textContent=='Paid')
+        status.style.color='green'
+        if(status.textContent=="Pending")
+        {
+            status.addEventListener("click",()=>{
+                localStorage.setItem('bookingId',element._id)
+                console.log(element._id)
+                window.location.href="payment.html"
+            })
+        }
+
         if(element.status=="Cancel")
         {
             let btn2=document.createElement("button")
@@ -120,7 +138,7 @@ function appendData(data){
                                 'success'
                             )
                             setTimeout(() => {
-                                window.location.reload();
+                                location.reload();
                             }, 2000);
                            
                            
@@ -135,7 +153,7 @@ function appendData(data){
             
 
             div1.append(img)
-            div2.append(type,description,price,checkin,checkout,bookingDate,btn1,btn2)
+            div2.append(type,description,price,checkin,checkout,bookingDate,payment,btn1,btn2)
             div.append(div1,div2)
             list.append(div)
         }

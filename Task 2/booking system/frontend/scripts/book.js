@@ -77,12 +77,28 @@ startDateInput.addEventListener('change', function() {
       .then(res =>res.json())
       .then(data=>{
         console.log(data)
+        localStorage.setItem('bookingId',data.booking._id)
         if(data.message!='This room is already booked for the selected dates.'){
-        Swal.fire(
-          'Confirmed',
-          '',
-          'success'
-        )
+          Swal.fire({
+            title: 'Do you want to pay?',
+            showCancelButton: true,
+            cancelButtonText: 'Pay later',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Pay now'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             window.location.assign('payment.html')
+            }
+            else{
+              Swal.fire(
+                'Booking Confirmed',
+                'Payment must be made within 24 hours, or the booking will be cancelled.',
+                'success'
+              )
+            }
+          })
+       
         }
         else{
           Swal.fire(
