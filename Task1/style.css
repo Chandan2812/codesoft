@@ -1,180 +1,61 @@
-body{
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
     margin: 0;
     padding: 0;
 }
-header{
-    background-image: linear-gradient(to right,orange , purple);
 
-}
-header>div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-header a{
-    padding: 10px;
-    color: white;
-    border-left: 1px solid white;
-}
-header a:nth-child(5){
-    border-right: 1px solid white;
-}
-header i,span{
-    color: white;
-    
-}
-header button{
-    padding: 5px 10px;
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: auto;
-}
-nav>div{
-    display: flex;
-    justify-content: space-between;
-}
-nav div a{
-    margin: 20px;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-}
-nav>div>div{
-    padding-top: 17px;
-}
-nav>div>div:nth-child(6){
-    background-color: rgb(255, 128, 0);
-}
-nav>div:nth-child(3){
-    background-color: black;
-    color: white;
-    padding-top: 17px;
-}
-nav>div>i{
-    padding: 10px;
-}
-
-.content{
-    background-image: url("https://research.ie/assets/uploads/2023/02/New-Foundations-image-1000x500.jpg");
-}
-.content>div{
-    width: 80%;
-    margin: auto;
-    padding: 90px;
-}
-.content>div>p{
-    line-height: 25px;
-    width: 60%;
-    font-size: 20px;
-}
-.content>div>button{
-   background-image: linear-gradient(to right,orange , purple); 
-   padding: 5px;
-   width: 8%;
-   border-radius: 15px;
-}
-.function{
-    padding: 20px;
-    background-image: linear-gradient(to right,orange , purple); 
-}
-.function>div{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-.function>div>div{
-    width: 25%;
-}
-.function>div>div>div:nth-child(1){
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    padding: 0px 10px;
-}
-.function>div>div>div:nth-child(2){
-    margin: -10px;
-    color: white;
-    padding-left: 20px;
-}
-
-.about{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-.about>div{
-    width: 50%;
-}
-.about>div>img{
-    width: 100%;
-}
-.about>div>h1{
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(0.25turn, rgb(255, 167, 34), rgba(255,0,128), rgba(56,2,155,0));
-    border-image-slice: 1;
-    width:100%;
-}
-.about p{
-    line-height: 30px;
-}
-.about button{
-    border: none;
-    background-image: linear-gradient(to right,orange , purple); 
-    border-radius: 20px;
-    padding: 10px 15px;
-    color: white;
-    font-size: 20px;
-}
-
-.last>h1{
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(0.25turn, rgb(255, 167, 34), rgba(255,0,128), rgba(56,2,155,0));
-    border-image-slice: 1;
-    width:fit-content;
-}
-.last{
-    padding: 40px;
-    background-image: linear-gradient(to right,rgb(133, 132, 131) , rgb(222, 219, 222)); 
-}
-.last>div{
-    width: 80%;
-    margin: auto;
-}
-.last>div>div{
-    display: flex;
-    justify-content: space-between;
-}
-.last>div>div>div{
-    width: 32%;
-}
-.last img{
-    width: 100%;
-    height: 70%;
-    z-index: -1;
-}
-.last h2{
+.image-container {
     position: relative;
-    left: 70px;
-    padding: 20px;
-    border-bottom-left-radius: 40px;
-    border-top-left-radius:40px ;
-    background-color: white;
-    margin-top: -35px;
-    width: 70%;
-    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+h1, p {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+li:before {
+    content: "🖐️";
+    margin-right: 10px;
 }
