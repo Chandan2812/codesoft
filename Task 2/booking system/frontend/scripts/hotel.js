@@ -7,7 +7,7 @@ let loadingIndicator = document.getElementById("loading");
 
 function getData(){
     loadingIndicator.style.display = 'block';
-    fetch(`http://localhost:8000/hotel`,{
+    fetch(`https://hotel-ydop.onrender.com/hotel`,{
             headers:{
                 "content-type":"applicaiton/json"
             }
@@ -93,7 +93,7 @@ function appendData(data){
         //console.log(data)
         city.value=""
          
-        fetch(`http://localhost:8000/hotel/search?q=${data}`,{
+        fetch(`https://hotel-ydop.onrender.com/hotel/search?q=${data}`,{
             headers:{
                 "content-type":"application/json"
             }

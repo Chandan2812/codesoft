@@ -109,6 +109,27 @@ bookingRouter.put('/:bookingId/update-payment', async (req, res) => {
     }
 });
 
+bookingRouter.get('/',async (req,res)=>{
+    try {
+        const bookings = await BookingModel.find()
+        .populate('user')
+            .populate({
+                path: 'room',
+                model: 'Room', 
+                populate: {
+                    path: 'hotelId',
+                    model: 'Hotel'
+                }
+            })
+            .exec();
+        const confirmed=await BookingModel.find({status:'Confirm'})
+        const cancelled=await BookingModel.find({status:'Cancel'})
+        
+        res.status(200).json({bookings,confirmed,cancelled});
+    } catch (error) {
+        res.status(500).json({ message: "An error occurred while fetching booking.", error: error.message });
+    }
+})
 
 
 module.exports={bookingRouter}

@@ -1,4 +1,4 @@
-const url = "http://localhost:8000";
+const url = "https://hotel-ydop.onrender.com";
 
 // login script is  start hare
 let login = document.getElementById("login-form");
@@ -17,6 +17,11 @@ login.addEventListener("submit", (e) => {
     });
     return;
   }
+if(lemail=="admin@gmail.com"&&lpass=='admin'){
+  window.location.href="admin.html"
+  
+}
+else{
 
 
   let signdata = {
@@ -71,4 +76,5 @@ login.addEventListener("submit", (e) => {
       });
 
     });
+  }
 });

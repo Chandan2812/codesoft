@@ -4,7 +4,7 @@ window.addEventListener("load",()=>{
 const hotelId=localStorage.getItem("hotelId")
 
 function getData(){
-    fetch(`http://localhost:8000/room/${hotelId}`,{
+    fetch(`https://hotel-ydop.onrender.com/room/${hotelId}`,{
             headers:{
                 "content-type":"applicaiton/json"
             }
@@ -102,7 +102,7 @@ fil.addEventListener('click', () => {
         let queryParam = typeValues.join(',');
         console.log(queryParam)
         
-        fetch(`http://localhost:8000/room/${hotelId}/type?q=${queryParam}`, {
+        fetch(`https://hotel-ydop.onrender.com/room/${hotelId}/type?q=${queryParam}`, {
             headers: {
                 "content-type": "application/json"
             }
@@ -122,7 +122,7 @@ select.addEventListener("change",()=>{
    let data=select.value
    console.log(data)
 
-   fetch(`http://localhost:8000/room/${hotelId}/sort?q=${data}`,{
+   fetch(`https://hotel-ydop.onrender.com/room/${hotelId}/sort?q=${data}`,{
     headers:{
         "content-type":"application/json"
     }

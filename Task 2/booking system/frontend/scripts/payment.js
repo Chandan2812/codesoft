@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         const bookingId = localStorage.getItem('bookingId');
         console.log(bookingId);
-        fetch(`http://localhost:8000/booking/${bookingId}/update-payment`, {
+        fetch(`https://hotel-ydop.onrender.com/booking/${bookingId}/update-payment`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

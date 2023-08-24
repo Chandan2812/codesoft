@@ -67,7 +67,7 @@ startDateInput.addEventListener('change', function() {
       endDate
     }
   
-    fetch(`http://localhost:8000/booking/${logedInUserID}`,{
+    fetch(`https://hotel-ydop.onrender.com/booking/${logedInUserID}`,{
       method: "POST",
       headers: {
         "content-type": "application/json"

@@ -10,7 +10,7 @@ function getData(){
         window.location.assign("index.html")
         return
       }
-    fetch(`http://localhost:8000/booking/${logedInUserID}`,{
+    fetch(`https://hotel-ydop.onrender.com/booking/${logedInUserID}`,{
             headers:{
                 "content-type":"applicaiton/json"
             }
@@ -122,7 +122,7 @@ function appendData(data){
                         const bookingId = element._id;
                         console.log(bookingId);
                         
-                        fetch(`http://localhost:8000/booking/${bookingId}/cancel`, {
+                        fetch(`https://hotel-ydop.onrender.com/booking/${bookingId}/cancel`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json'

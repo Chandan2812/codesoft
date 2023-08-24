@@ -6,7 +6,7 @@ const roomRouter=express.Router()
 roomRouter.get('/:hotelId', async (req, res) => {
     try {
         const hotelId=req.params.hotelId
-        const rooms = await RoomModel.find({hotelId:hotelId}); // Fetch all hotels
+        const rooms = await RoomModel.find({hotelId:hotelId});
         
         res.status(200).json(rooms);
     } catch (error) {

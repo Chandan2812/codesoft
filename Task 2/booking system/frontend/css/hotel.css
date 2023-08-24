@@ -1,5 +1,5 @@
 #list{
-    
+    width: 90%;
     padding: 10px;
     margin: auto;
     display: grid;
@@ -19,6 +19,11 @@
 #list>div>div{
     margin: 10px;
     cursor: pointer;
+    width: 50%;
+}
+#list>div>div>img{
+    width: 100%;
+    height: 100%;
 }
 #list>div>div>h3:nth-child(1){
     color: #CC8C18;
